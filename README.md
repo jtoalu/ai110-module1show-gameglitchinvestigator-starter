@@ -26,8 +26,17 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+The game is to guess the secret number generated randomly between 1 and 100. Each round game has 8 attempts to guess the secret number. If the secret number
+is guessed before all given attempts are used, then the player win the game. Otherwise, the player loose. 
 - [ ] Detail which bugs you found.
+1) The New Game button does not reset the record/data and it does not restart the game either.
+2) The State Bug exist because there is a section of code which converting the secret number from integer into string when it is an even attemp.
+3) The Hint is incorrect. When the guess is smaller than the secret number, the Hint says Go LOWER and when the guess is bigger than the secret number,
+the Hint says Go HIGHER.
 - [ ] Explain what fixes you applied.
+1) The New Game bug was fixed by modifying the code in the "if new_game" section.
+2) The State Bug was fixed by eliminating the "if st.session_state.attempts % 2 == 0" section.
+3) The Hint bug was fixed by modifying the code in the "def check_guess(guess, secret)" function.
 
 ## 📸 Demo Walkthrough
 
