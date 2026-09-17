@@ -42,9 +42,8 @@ the Hint says Go HIGHER.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. # FIXME: Logic breaks here because the "New game started" is not displayed on the screen after clicking the New Game button. The following is the 
-newer (fixed) version.
--  if new_game:
+1. # FIXME: Logic breaks here because the "New game started" is not displayed on the screen after clicking the New Game button. The following is the newer (fixed) version.
+if new_game:
 -    st.session_state.status = "playing"
 -    st.session_state.score = 0
 -    st.session_state.history = []
@@ -52,28 +51,27 @@ newer (fixed) version.
 -    st.session_state.secret = random.randint(1, 100)
 -    st.success("New game started.")
 
-2. # The State Bug exist because there is a section of code which converting the secret number from integer into string when it is an even attemp. The 
-following in the newer (fixed) version.
--    if submit:
--        ..........
--    else:
+2. # The State Bug exist because there is a section of code which converting the secret number from integer into string when it is an even attemp. The following in the newer (fixed) version.
+if submit:
+-        <SNIP>
+else:
 -        st.session_state.history.append(guess_int)
 -        secret = st.session_state.secret
 -        outcome, message = check_guess(guess_int, secret)
 
 3. # FIXME: Logic breaks here because the app says "Go LOWER!" when the guess is lower than the secret. The following is the newer (fixed) version.
--     try:
--         if guess > secret:
--            return "Too High", "📉 Go LOWER!"
--         else:
--            return "Too Low", "📈 Go HIGHER!"
--     except TypeError:
--         g = str(guess)
--         if g == secret:
--             return "Win", "🎉 Correct!"
--         if g > secret:
--            return "Too High", "📉 Go LOWER!"
--        return "Too Low", "📈 Go HIGHER!"
+     try:
+         if guess > secret:
+            return "Too High", "📉 Go LOWER!"
+         else:
+            return "Too Low", "📈 Go HIGHER!"
+     except TypeError:
+         g = str(guess)
+         if g == secret:
+             return "Win", "🎉 Correct!"
+         if g > secret:
+            return "Too High", "📉 Go LOWER!"
+        return "Too Low", "📈 Go HIGHER!"
 
 4. <!-- Describe this step -->
 5. <!-- Add more steps as needed -->
