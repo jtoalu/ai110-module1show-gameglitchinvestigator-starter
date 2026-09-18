@@ -24,7 +24,7 @@ def parse_guess(raw: str):
             value = int(float(raw))
         else:
             value = int(raw)
-    except Exception:
+    except (TypeError, ValueError):
         return False, None, "That is not a number."
 
     return True, value, None
@@ -49,7 +49,7 @@ def check_guess(guess, secret):
         else:
             return "Too Low", "📈 Go HIGHER!"
     except TypeError:
-        g = str(guess)
+        g = int(guess)
         if g == secret:
             return "Win", "🎉 Correct!"
         if g > secret:
