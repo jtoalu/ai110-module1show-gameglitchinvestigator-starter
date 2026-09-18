@@ -1,15 +1,6 @@
 import random
 import streamlit as st
-
-def get_range_for_difficulty(difficulty: str):
-    if difficulty == "Easy":
-        return 1, 20
-    if difficulty == "Normal":
-        return 1, 100
-    if difficulty == "Hard":
-        return 1, 50
-    return 1, 100
-
+from logic_utils import get_range_for_difficulty
 
 def parse_guess(raw: str):
     if raw is None:
@@ -137,7 +128,7 @@ if new_game:
     st.session_state.score = 0
     st.session_state.history = []
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    st.session_state.secret = random.randint(low, high)
     st.success("New game started.")
     st.rerun()
 
