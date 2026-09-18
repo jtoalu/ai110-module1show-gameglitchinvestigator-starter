@@ -94,8 +94,8 @@ else:
 # ========================= X passed in 0.XXs =========================
 ```
 
-python3 -m pytest ./tests/test_game_logic.py
-===================================== test session starts ======================================<br>
+python3 -m pytest ./tests/test_game_logic.py<br>
+=============================== test session starts ============================<br>
 platform linux -- Python 3.13.12, pytest-9.1.1, pluggy-1.6.0<br>
 rootdir: /home/james/Desktop/CodePath/ai110-module1show-gameglitchinvestigator-starter<br>
 plugins: anyio-4.15.1<br>
@@ -103,7 +103,7 @@ collected 6 items<br>
 
 tests/test_game_logic.py ......                                                                                                                      [100%]
 
-====================================== 6 passed in 0.02s ===========================================
+=========================== 6 passed in 0.02s ==================================
 
 ## 🚀 Stretch Features
 
