@@ -33,16 +33,19 @@ is guessed before all given attempts are used, then the player win the game. Oth
 2) The State Bug exist because there is a section of code which converting the secret number from integer into string when it is an even attempt.
 3) The Hint is incorrect. When the guess is smaller than the secret number, the Hint says Go LOWER and when the guess is bigger than the secret number,
 the Hint says Go HIGHER.
+4) The random number generated based on the chosen difficulty level.
+5) The information on the upper part of the game does not display the range of random number correctly according to the chosen difficulty level.
 - [ ] Explain what fixes you applied.
 1) The New Game bug was fixed by modifying the code in the "if new_game" section.
 2) The State Bug was fixed by eliminating the "if st.session_state.attempts % 2 == 0" section.
 3) The Hint bug was fixed by modifying the code in the "def check_guess(guess, secret)" function.
-
+4) The random number generated according to the chosen difficulty level was fixed by adjusting the "st.session_state.secret = random.randint(1, 100)" code.
+5) The information is corrected by making the range number pulled from the chosen difficulty level.
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. # FIXME: Logic breaks here because the "New game started" is not displayed on the screen after clicking the New Game button. The following is the newer (fixed) version.
+#1. FIXME: Logic breaks here because the "New game started" is not displayed on the screen after clicking the New Game button. The following is the newer (fixed) version.
 if new_game:
 -    st.session_state.status = "playing"
 -    st.session_state.score = 0
@@ -51,7 +54,7 @@ if new_game:
 -    st.session_state.secret = random.randint(1, 100)
 -    st.success("New game started.")
 
-2. # The State Bug exist because there is a section of code which converting the secret number from integer into string when it is an even attemp. The following is the newer (fixed) version.
+#2. The State Bug exist because there is a section of code which converting the secret number from integer into string when it is an even attemp. The following is the newer (fixed) version.
 if submit:
 -        <SNIP>
 else:
@@ -59,7 +62,7 @@ else:
 -        secret = st.session_state.secret
 -        outcome, message = check_guess(guess_int, secret)
 
-3. # FIXME: Logic breaks here because the app says "Go LOWER!" when the guess is lower than the secret. The following is the newer (fixed) version.
+#3. FIXME: Logic breaks here because the app says "Go LOWER!" when the guess is lower than the secret. The following is the newer (fixed) version.
      try:
 -         if guess > secret:
             return "Too High", "📉 Go LOWER!"
@@ -73,8 +76,13 @@ else:
             return "Too High", "📉 Go LOWER!"
  -        return "Too Low", "📈 Go HIGHER!"
 
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+#4. The random number generated according to the chosen difficulty level was fixed by applying the following code.
+- st.session_state.secret = random.randint(low, high)
+#5. The information on the upper part of the game is now pulled from the chosen difficulty level. The following is the newer (fixed) version.
+  st.info(
+-    f"Guess a number between {low} and {high}. "
+-    f"Attempts left: {attempt_limit - st.session_state.attempts}"
+)
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
