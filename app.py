@@ -130,3 +130,22 @@ if submit:
 
 st.divider()
 st.caption("Built by an AI that claims this code is production-ready.")
+
+summary_rows = [
+    {"Metric": "Difficulty", "Value": difficulty},
+    {"Metric": "Game status", "Value": st.session_state.status.title()},
+    {"Metric": "Attempts used", "Value": st.session_state.attempts},
+    {
+        "Metric": "Attempts remaining",
+        "Value": max(0, attempt_limit - st.session_state.attempts),
+    },
+    {"Metric": "Score", "Value": st.session_state.score},
+    {"Metric": "Guesses made", "Value": len(st.session_state.history)},
+]
+
+if st.session_state.status != "playing":
+    summary_rows.append(
+        {"Metric": "Secret number", "Value": st.session_state.secret}
+    )
+
+st.table(summary_rows)
