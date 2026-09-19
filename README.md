@@ -126,3 +126,9 @@ tests/test_game_logic.py ......                                                 
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, describe the Enhanced UI changes here — a screenshot is optional]
+
+The following code is added to include a summary table of the game session (without breaking core game logic).
+
+![Enhanced Game UI](images/Screenshot%202026-09-19%20075623.png "Enhanced Game UI")
+
+![Enhanced Game UI](images/Screenshot%202026-09-19%20075518.png "Enhanced Game UI")
