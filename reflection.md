@@ -14,9 +14,9 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | | The New Game button does not reset the record/data and it does not restart the game either.
-| | | | | The State Bug exist because there is a section of code which converting the secret number from integer into string when it is an even attempt.
-| | | | | The Hint is incorrect. When the guess is smaller than the secret number, the Hint says Go LOWER and when the guess is bigger than the secret number, the Hint says Go HIGHER.
+- The New Game button does not reset the record/data and it does not restart the game either.
+- The State Bug exist because there is a section of code which converting the secret number from integer into string when it is an even attempt.
+- The Hint is incorrect. When the guess is smaller than the secret number, the Hint says Go LOWER and when the guess is bigger than the secret number, the Hint says Go HIGHER.
 
 ---
 
