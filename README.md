@@ -86,13 +86,13 @@ else:
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 ![Analyze Code with FIXME Comment](images/Screenshot%202026-09-15%20124800.png "Conversation with Copilot")
-https://github.com/jtoalu/ai110-module1show-gameglitchinvestigator-starter/blob/main/images/Screenshot%202026-09-15%20124800.png
+
 ![Analyze Code with FIXME Comment](images/Screenshot%202026-09-15%20131732.png "Conversation with Copilot")
-https://github.com/jtoalu/ai110-module1show-gameglitchinvestigator-starter/blob/main/images/Screenshot%202026-09-15%20131732.png
+
 ![Analyze Code with FIXME Comment](images/Screenshot%202026-09-15%20132756.png "Conversation with Copilot")
-https://github.com/jtoalu/ai110-module1show-gameglitchinvestigator-starter/blob/main/images/Screenshot%202026-09-15%20132756.png
+
 ![Analyze Code with FIXME Comment](images/Screenshot%202026-09-15%20151127.png "Conversation with Copilot")
-https://github.com/jtoalu/ai110-module1show-gameglitchinvestigator-starter/blob/main/images/Screenshot%202026-09-15%20151127.png
+
 
 ## 🧪 Test Results
 
