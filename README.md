@@ -46,6 +46,7 @@ the Hint says Go HIGHER.
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
 #1. FIXME: Logic breaks here because the "New game started" is not displayed on the screen after clicking the New Game button. The following is the newer (fixed) version.
+
 if new_game:
 -    st.session_state.status = "playing"
 -    st.session_state.score = 0
@@ -55,6 +56,7 @@ if new_game:
 -    st.success("New game started.")
 
 #2. The State Bug exist because there is a section of code which converting the secret number from integer into string when it is an even attemp. The following is the newer (fixed) version.
+
 if submit:
 -        <SNIP>
 else:
@@ -63,11 +65,13 @@ else:
 -        outcome, message = check_guess(guess_int, secret)
 
 #3. FIXME: Logic breaks here because the app says "Go LOWER!" when the guess is lower than the secret. The following is the newer (fixed) version.
+
      try:
 -         if guess > secret:
             return "Too High", "📉 Go LOWER!"
 -         else:
             return "Too Low", "📈 Go HIGHER!"
+
      except TypeError:
  -        g = str(guess)
  -        if g == secret:
@@ -78,10 +82,13 @@ else:
 
 #4. The random number generated according to the chosen difficulty level was fixed by applying the following code.
 - st.session_state.secret = random.randint(low, high)
+
 #5. The information on the upper part of the game is now pulled from the chosen difficulty level. The following is the newer (fixed) version.
+
   st.info(
 -    f"Guess a number between {low} and {high}. "
 -    f"Attempts left: {attempt_limit - st.session_state.attempts}"
+
 )
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
@@ -93,6 +100,9 @@ else:
 
 ![Analyze Code with FIXME Comment](images/Screenshot%202026-09-15%20151127.png "Conversation with Copilot")
 
+![Testing the code with pytest](images/Screenshot%202026-09-18%20125704.png "Testing the code with pytest")
+
+![Testing the code with pytest](images/Screenshot%202026-09-18%20125724.png "Testing the code with pytest")
 
 ## 🧪 Test Results
 
